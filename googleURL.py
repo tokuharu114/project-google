@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
 from selenium import webdriver              # Webブラウザを自動操作する（python -m pip install selenium)
                  # パスを通すためのコード
-from csv import reader 
+from csv import reader
 import random
 from selenium.webdriver.chrome.options import Options
 
