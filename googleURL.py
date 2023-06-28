@@ -25,10 +25,10 @@ def GURL(list):
     options = Options()
     options.headless = False
     #driver = webdriver.Firefox()
-    driver = webdriver.Chrome(options=options)
+    #driver = webdriver.Chrome(options=options)
     #options = Options()
     #options.add_argument('--headless')
-    #driver = webdriver.Chrome(executable_path=r"C:\Users\Sho\anaconda3\Lib\site-packages\chromedriver_binary\chromedriver.exe", options=options)                   # Chromeを準備
+    driver = webdriver.Chrome(executable_path="C:\\Users\\Administrator\\Downloads\\chromedriver.exe", options=options)                   # Chromeを準備
 
     # サンプルのHTMLを開く
     driver.get('https://www.google.com/')       # Googleを開く
