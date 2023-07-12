@@ -42,7 +42,7 @@ def GURL(list):
     time.sleep(random.random())
     def ranking(driver):
         i = 1               # ループ番号、ページ番号を定義
-        i_max = 30           # 最大何ページまで分析するかを定義
+        i_max = 45           # 最大何ページまで分析するかを定義
         title_list = []     # タイトルを格納する空リストを用意
         link_list = []      # URLを格納する空リストを用意
     
