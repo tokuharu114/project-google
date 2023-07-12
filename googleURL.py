@@ -28,7 +28,9 @@ def GURL(list):
     #driver = webdriver.Chrome(options=options)
     #options = Options()
     #options.add_argument('--headless')
-    driver = webdriver.Chrome(executable_path="C:\\Users\\Administrator\\Downloads\\chromedriver.exe", options=options)                   # Chromeを準備
+    #driver = webdriver.Chrome(executable_path="C:\\Users\\Administrator\\Downloads\\chromedriver.exe", options=options)     # Chromeを準備
+    driver = webdriver.Chrome(executable_path="/Users/satoutokuma/Downloads/chromedriver_mac64/chromedriver", options=options)
+    
 
     # サンプルのHTMLを開く
     driver.get('https://www.google.com/')       # Googleを開く
@@ -40,7 +42,7 @@ def GURL(list):
     time.sleep(random.random())
     def ranking(driver):
         i = 1               # ループ番号、ページ番号を定義
-        i_max = 11           # 最大何ページまで分析するかを定義
+        i_max = 30           # 最大何ページまで分析するかを定義
         title_list = []     # タイトルを格納する空リストを用意
         link_list = []      # URLを格納する空リストを用意
     
