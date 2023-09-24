@@ -3,16 +3,12 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
-from selenium import webdriver              # Webブラウザを自動操作する（python -m pip install selenium)
-                 # パスを通すためのコード
-from csv import reader
+from selenium import webdriver  # Webブラウザを自動操作する（python -m pip install selenium)
+from csv import reader 
 import random
 from selenium.webdriver.chrome.options import Options
-
-
 import os
 from openpyxl import Workbook
-
 
 with open('kwlist.csv', 'r', encoding='utf-8') as csv_file:
     csv_reader = reader(csv_file)
@@ -24,13 +20,9 @@ with open('kwlist.csv', 'r', encoding='utf-8') as csv_file:
 def GURL(list):
     options = Options()
     options.headless = False
-    #driver = webdriver.Firefox()
-    #driver = webdriver.Chrome(options=options)
-    #options = Options()
-    #options.add_argument('--headless')
-    #driver = webdriver.Chrome(executable_path="C:\\Users\\Administrator\\Downloads\\chromedriver.exe", options=options)     # Chromeを準備
-    driver = webdriver.Chrome(executable_path="/Users/satoutokuma/Downloads/chromedriver_mac64/chromedriver", options=options)
     
+    path = "/Users/satoutokuma/Downloads/chromedriver_mac64/chromedriver"
+    driver = webdriver.Chrome(executable_path=path, options=options)
 
     # サンプルのHTMLを開く
     driver.get('https://www.google.com/')       # Googleを開く
@@ -42,7 +34,7 @@ def GURL(list):
     time.sleep(random.random())
     def ranking(driver):
         i = 1               # ループ番号、ページ番号を定義
-        i_max = 45           # 最大何ページまで分析するかを定義
+        i_max = 11           # 最大何ページまで分析するかを定義
         title_list = []     # タイトルを格納する空リストを用意
         link_list = []      # URLを格納する空リストを用意
     
@@ -98,7 +90,6 @@ def GURL(list):
     # ブラウザを閉じる
     driver.quit()
 
-    
 
 LEN=len(list_of_rows)
 print(str(LEN))
@@ -106,7 +97,9 @@ for num in range(1,LEN):
     print("now getting url of "+str(list_of_rows[num]))
     
     GURL(list_of_rows[num]) 
-
+    
+    
+"""
 filepathcsv="C:\DYM\getURL\\allcsv"
 filepathtext='C:\DYM\getURL\\alltext'
 basename = os.listdir (filepathcsv)
@@ -148,3 +141,4 @@ for i in range(len(basename)):
     wb.save('./final/【'+fname+'_20230112】.xlsx')
     
 
+"""
